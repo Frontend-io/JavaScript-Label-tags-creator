@@ -70,7 +70,7 @@ submit.addEventListener('click', ()=>{
 		form.addEventListener("submit", (e)=>{
 		e.preventDefault();
 	});
-	// Preventing submission of empty input
+	// Preventing submission of empty input and duplicate label
 	if (input.value == ""  ) {
 		message.innerText = "Please input a value!"
 		message.classList.remove("hidden");
