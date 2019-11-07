@@ -7,7 +7,6 @@ var  submit = document.querySelector("button");
 var  message = document.querySelector(".message");
 // Adding event to the Add Label button
 
-// hook.addEventListener("click", autoLabel);
 
 // Array to hold the labels entered for backend export
 var labelsForExport = [];
