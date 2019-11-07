@@ -2,88 +2,85 @@ body{
 	position: relative;
 	padding: 0px 3px;
 	margin: 0px;
-	font-family: open sans;
-	display: flex;
-
+	font-family: nunito;
 }
-h2,
-h3{
-	margin: 0px;
-	padding: 0px;
 
-}
 button{
 	cursor: pointer;
 	outline: none;
-	padding: 5px 10px;
+	padding: 15px 20px;
+	border-radius: 3px;
 	border: none;
+	box-shadow: 5px 5px 2px rgba(0,0,0,.08);
+	background:  #ff5555;
+	width: 50%;
+	margin: 8px auto;
+	display: flex;
+	justify-content: center;
+	color: #fff;
+	text-align: center;
+	transition: .8s;
+	font-size: 18px;
+}
+button:hover{
+	box-shadow: none;
+	transition: .8s;
 }
 input{
 	outline: none;
-	padding-right: 10px;
+	-webkit-appearance: none !important;
 	height: 40px;
-	width: 100%;
-	box-sizing: border-box;
-	margin-top: 20px;
-}
-.message{
-	position: absolute;
-	top: -200px;
-	transition: .3s;
-	left: 50%;
-	transform: translateX(-50%);
-	min-height: 40px;
-	padding: 20px;
-	text-align: center;
+	padding: 10px;
 	font-size: 16px;
-	color: #fff;
-	width: 100%;
-	max-width: 450px;
-	border: 1px solid orange;
-	background: orange;
-	z-index: 99999;
-	box-shadow: 0px 30px 50px rgba(0,0,0,.5)
-
-}
-.header{
-	width: 100%;
-	max-width: 400px;
-	position: absolute;
-	left: 50%;
-	margin-top: 20px;
-	background: rgba(50, 200, 10);
-	height: auto;
-	border-bottom: 2px solid #eee;
+	align-self: center;
+	flex: 1;
 	box-sizing: border-box;
-	padding: 5px 20px;
-	transform: translate(-50%);
-	color: #fff;
-	font-size: 14px
+	border: none !important;
+	min-width: 80px;
+	color: #aaa;
 }
-/*.header div{
-	background: #fff;
-	margin: 2px 5px;
-	padding: 2px 5px;
-	cursor: pointer;
-}*/
+input:focus{
+	background: #fff !important;
+}
+
 .container{
-	margin-top: 23px;
+	margin: 10% auto;
 	width: 100%;
 	max-width: 400px;
-	box-shadow: 0px 20px 40px #ddd;
 	box-sizing: border-box;
 	padding: 20px;
-	position: absolute;
-	left: 50%;
-	top: 50px;
-	transform: translate(-50%);
-	border-bottom: 5px solid rgba(50, 200, 10);;
-	transition: .5s;
+	border-radius: 3px;
+	box-shadow: 0px 10px 30px rgba(0,0,0,.08)
+}
+.container > *{
+	border: 1px solid #ddd;
+	padding: 20px;
+	width: 100%;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 30px rgba(0,0,0,.03)
+}
+.container > *:first-child,
+.container > *:last-child{
+	background: #f2f2f2;
+}
+.container > *:first-child{
+	border-bottom: none;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+}
+.container > *:last-child{
+	border-top: none;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
 }
 .container .intro{
 	padding-top: 5px;
 	text-align: center;
-	font-size: 14px
+	font-size: 14px;
+}
+.container .intro h2,
+h3{
+	margin: 3px 0px;
 }
 .container a{
 	padding: 5px 8px;
@@ -91,39 +88,59 @@ input{
 	color: #222;
 	font-size: 14px;
 }
-.container button{
-	cursor: pointer;
-	outline: none;
+.container .message{
+	width: 100%;
 	padding: 10px;
-	width: 50%;
-	border: none;
-	margin: 10px 0px 30px 0px;
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
-	border-radius: 50px
-
+	text-align: center;
+	border-bottom: none;
+	color: #ff5555;
+	text-transform: capitalize; 
+	transform: scale(1);
+	display: block;
+	transition: .3s ease-out;
+}
+.container .message.hidden{
+	transform: scale(0);
+	display: none;
+	transition: .3s ease-out;
 }
 .container .archive{
 	width: 100%;
-	padding: 3px;
-	border: 1px solid teal;
-	min-height: 100px;
-}
-.container .archive > span{
-	background: orange;
-	color: #fff;
-	margin: 1px;
 	box-sizing: border-box;
-	display: inline-block;
-	padding: 5px;
-	border-radius: 5PX;
-	border:1px solid #eee;
+	margin: 0px auto !important;
+	height: auto;
+	padding: 3px;
+	border: 1.2px solid #ddd;
+	background: #fff;
+	border-radius: 3px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	min-height: 40px;
+}
+.container .archive .label{
+	background: #f2f2f2;
+	color: #222;
+	font-size: 16px;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	padding: 5px 8px;
+	border-radius: 3px;
+	border:1px solid #ddd;
 	font-size: 12px;
 	text-align: center;
-	flex: 1;
-	width: auto;
-	animation: .2s tada ease-out;
+	margin: 3px;
+	animation: .3s tada ease-out;
+}
+.container .archive .label .delete-tag{
+	margin-left: 5px;
+	font-size: 18px;
+	cursor: pointer;
+	font-weight: 800;
+}
+.container .archive .label #delete-tag:hover{
+	color: #000;
 }
 @keyframes tada{
 	from {
@@ -131,21 +148,5 @@ input{
 	}
 	to {
 		transform: scale(1);
-	}
-}
-@media(max-width: 500px){
-	.container,
-	.header{
-		max-width: 350px;
-	}
-	.message{
-		max-width: 100%
-	}
-}
-@media(max-width: 360px){
-	.container
-	.header{
-		max-width: 1000%;
-		width: 100%;
 	}
 }
